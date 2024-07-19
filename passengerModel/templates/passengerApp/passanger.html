@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passenger Information</title>
+</head>
+<body>
+    <h1>Passenger List: </h1>
+    {% if passenger %}
+    <table>
+        <thead>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>Reward Points</th>
+        </thead>
+        {% for pas in passenger %}
+        <tr>
+            <td>{{pas.firstName}}</td>
+            <td>{{pas.lastName}}</td>
+            <td>{{pas.email}}</td>
+            <td>{{pas.rewardPoints}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No data found</p>
+    {% endif %}
+</body>
+</html>
